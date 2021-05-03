@@ -6,7 +6,7 @@ router.get("/",(req , res)=>{
     
     //res.json({movies: movies})
     //const filtro = movies[0].actors.filter( a => a == "Scarlett Johansson")
-    res.send("sadsd")
+    res.json("API de filmes")
 
 })
 router.get("/movies", movieController.list)

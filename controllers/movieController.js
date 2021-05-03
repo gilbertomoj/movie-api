@@ -3,6 +3,8 @@ const Movie = require("../models/Movie");
 const routes = express.Router();
 
 class MoviesController{
+
+    //CRUD base 
     async list(req, res){
         const movie = await Movie.find();
         res.send(movie)
@@ -21,6 +23,8 @@ class MoviesController{
         })
         
         if(savedMovie != undefined){
+            
+            //Tratamento de erro aqui !!
             res.status(200).send("Filme salvo com sucesso")
         }else{
             res.status(400).send("Ocorreu um erro e o filme não foi salvo")
@@ -28,28 +32,34 @@ class MoviesController{
         
 
     }
+
+    async update(req, res){
+
+    }
+
+    async delete(req, res){
+    }
+
+
+    //Rotas extras
+    async find(req , res){
+
+    }
+
+    async listByCategory(req, res){
+
+    }
+
+    async listByYear(req, res){
+
+    }
+
+    async listByScore(req, res){
+
+    }
+
+    
+
 }
-//Criação de Filmes
-routes.post("/create", async (req , res)=>{
-
-})
-//Listagem de Filmes
-routes.get("/list", async (req, res)=>{
-    res.send("all movies")
-})
-//Listagem de Filmes por ID
-routes.get("/list/:id", async (req , res)=>{
-
-})
-
-//Atualização de Filmes
-routes.post("/update/:id", async (req, res)=>{
-
-})
-
-//Delete de Filmes
-routes.post("/delete/movie/:id",async (req , res)=>{
-
-})
 
 module.exports = new MoviesController;

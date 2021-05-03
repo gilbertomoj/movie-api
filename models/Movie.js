@@ -13,6 +13,10 @@ const movieSchema = new mongoose.Schema({
         type: Array,
         required: true
     },
+    category:{
+        type: String,
+        required: true
+    },
     synopsis: {
         type: String,
         required: true
